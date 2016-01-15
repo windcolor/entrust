@@ -34,6 +34,24 @@ trait HasRole
     }
 
     /**
+     * Checks if the user has a Role by its name.
+     *
+     * @param array $name Role name.
+     *
+     * @return bool
+     */
+    public function hasRoles($array_name)
+    {
+        foreach ($this->roles as $role) {
+            if (in_array($role->name, $array_name)) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    /**
      * Check if user has a permission by its name.
      *
      * @param string $permission Permission string.
