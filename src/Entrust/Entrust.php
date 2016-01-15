@@ -40,6 +40,15 @@ class Entrust
         return false;
     }
 
+    public function hasRoles($permission)
+    {
+        if ($user = $this->user()) {
+            return $user->hasRoles($permission);
+        }
+
+        return false;
+    }
+
     /**
      * Check if the current user has a permission by its name
      *
